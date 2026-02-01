@@ -1,6 +1,7 @@
 import express from 'express';
 import { createInbox, getInboxItems, updateInboxItems } from '../controllers/InboxLeft.js';
-import protect from '../middleware/AuthMiddleware.js';
+import protect from '../middleware/authMiddleware.js';
+
 
 const inboxRouter=express.Router();
 

@@ -1,5 +1,5 @@
 import express from 'express'
-import protect from '../middleware/AuthMiddleware.js';
+import protect from '../middleware/authMiddleware.js';
 import { createBoard, getAllBoard, getOrCreateBoard,  } from '../controllers/boardController.js';
 
 const boardRouter=express.Router();
