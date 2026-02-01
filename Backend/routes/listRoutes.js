@@ -1,6 +1,7 @@
 import express from 'express'
 import protect from '../middleware/authMiddleware.js';
-import { createList, getA } from '../controllers/listController.js';
+
+import { createList, getAllList } from '../controllers/listController.js';
 
 const listRouter=express.Router();
 
