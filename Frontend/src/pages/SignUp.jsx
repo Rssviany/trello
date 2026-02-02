@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios"; 
 import checklist from '../assets/images/checklist.svg'
 import React from 'react'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -25,7 +26,7 @@ const Register = () => {
     setLoading(true);
 
     try {
-      await axios.post("https://trello-backend-izq1.onrender.com/api/auth/register", formData, {
+      await axios.post(`${BASE_URL}/api/auth/register`, formData, {
         withCredentials: true,
       });
 

@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import React from 'react'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const fecthUser = createAsyncThunk(
     'user/fecthUser',
     async ({ email, password }, { rejectWithValue }) => {
         try {
-            const res = await fetch('https://trello-backend-izq1.onrender.com/api/auth/login', {
+            const res = await fetch(`${BASE_URL}/api/auth/login`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: {

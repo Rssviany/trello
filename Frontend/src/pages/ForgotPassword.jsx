@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const ForgotPassword = () => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const ForgotPassword = () => {
     setLoading(true);
     setError("");
     try {
-      const response = await fetch("https://trello-backend-izq1.onrender.com/api/auth/forgot-password", {
+      const response = await fetch(`${BASE_URL}/api/auth/forgot-password`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -47,7 +48,7 @@ const ForgotPassword = () => {
     setLoading(true);
     setError("");
     try {
-      const response = await fetch("https://trello-backend-izq1.onrender.com/api/auth/reset-password", {
+      const response = await fetch(`${BASE_URL}/api/auth/reset-password`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

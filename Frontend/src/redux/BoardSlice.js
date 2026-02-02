@@ -1,9 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const fetchBoards = createAsyncThunk(
     'boards/fetchBoards',
     async () => {
-        const res = await fetch(`https://trello-backend-izq1.onrender.com/board/default`, {
+        const res = await fetch(`${BASE_URL}/board/default`, {
             method: 'GET',
             credentials: 'include'
         });
@@ -14,7 +15,7 @@ export const fetchBoards = createAsyncThunk(
 export const createBoards = createAsyncThunk(
     'boards/createBoards',
     async ({ title, background }) => {
-        const res = await fetch(`https://trello-backend-izq1.onrender.com/board/creating_board`, {
+        const res = await fetch(`${BASE_URL}/board/creating_board`, {
             method: 'POST',
             credentials: 'include',
             headers: { 'Content-Type': 'application/json' },
@@ -29,7 +30,7 @@ export const createBoards = createAsyncThunk(
 export const fecthAllBoards = createAsyncThunk(
     'boards/fetchAllBoards',
     async () => {
-        const res = await fetch('https://trello-backend-izq1.onrender.com/board/all_boards', {
+        const res = await fetch(`${BASE_URL}/board/all_boards`, {
             method: 'GET',
             credentials: 'include'
         });

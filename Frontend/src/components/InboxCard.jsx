@@ -1,5 +1,6 @@
 import React from 'react'
 import edit from '../assets/icons/edit.png'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function InboxCard({ card, setEditOpen, setCards }) {
 
@@ -12,7 +13,7 @@ function InboxCard({ card, setEditOpen, setCards }) {
             )
         )
 
-        await fetch(`https://trello-backend-izq1.onrender.com/inbox/items/${card._id}`, {
+        await fetch(`${BASE_URL}/inbox/items/${card._id}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             credentials: "include",

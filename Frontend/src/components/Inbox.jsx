@@ -4,6 +4,7 @@ import dots from '../assets/icons/dots.png'
 import filter from '../assets/icons/filter.png'
 import announcement from '../assets/icons/announcement.png'
 import InboxCard from './InboxCard'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function Inbox() {
     const [cardOpen, setCardOpen] = useState(false)
@@ -30,7 +31,7 @@ function Inbox() {
 
         try {
             const res = await fetch(
-                "https://trello-backend-izq1.onrender.com/inbox/items_creating",
+                `${BASE_URL}/inbox/items_creating`,
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -56,7 +57,7 @@ function Inbox() {
     useEffect(() => {
         const loadCards = async () => {
             const res = await fetch(
-                "https://trello-backend-izq1.onrender.com/inbox/items",
+                `${BASE_URL}/inbox/items`,
                 { credentials: "include" }
             )
             const data = await res.json()

@@ -8,7 +8,7 @@ import InboxEditPanel from './InboxEditPanel'
 
 
 
-
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function BoardCards({ boardId }) {
     const [cardsByList, setCardsByList] = useState({});
@@ -23,7 +23,7 @@ function BoardCards({ boardId }) {
         if (!boardId) return;
         const fetchLists = async () => {
             try {
-                const res = await fetch(`https://trello-backend-izq1.onrender.com/list/list_items?boardId=${boardId}`, {
+                const res = await fetch(`${BASE_URL}/list/list_items?boardId=${boardId}`, {
                     method: 'GET',
                     credentials: 'include'
                 });
@@ -42,7 +42,7 @@ function BoardCards({ boardId }) {
         const fetchCards = async () => {
             try {
                 const res = await fetch(
-                    `https://trello-backend-izq1.onrender.com/card/all_cards?boardId=${boardId}`,
+                    `${BASE_URL}/card/all_cards?boardId=${boardId}`,
                     {
                         method: 'GET',
                         credentials: 'include',
@@ -75,7 +75,7 @@ function BoardCards({ boardId }) {
     const handleAddList = async (e) => {
         if (!listTitle.trim()) return
         try {
-            const res = await fetch(`https://trello-backend-izq1.onrender.com/list/creating_list`, {
+            const res = await fetch(`${BASE_URL}/list/creating_list`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: {
@@ -101,7 +101,7 @@ function BoardCards({ boardId }) {
         if (!title || !title.trim()) return;
 
         try {
-            const res = await fetch(`https://trello-backend-izq1.onrender.com/card/creating_card`, {
+            const res = await fetch(`${BASE_URL}/card/creating_card`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: {
@@ -128,7 +128,7 @@ function BoardCards({ boardId }) {
     const handleDeleteCard = async (cardId) => {
         try {
             const res = await fetch(
-                `https://trello-backend-izq1.onrender.com/card/delete_card/${cardId}`,
+                `${BASE_URL}/card/delete_card/${cardId}`,
                 { method: 'DELETE', credentials: 'include' }
             );
 
