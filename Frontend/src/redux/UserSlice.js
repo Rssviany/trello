@@ -5,7 +5,7 @@ export const fecthUser = createAsyncThunk(
     'user/fecthUser',
     async ({ email, password }, { rejectWithValue }) => {
         try {
-            const res = await fetch('http://localhost:6969/api/auth/login', {
+            const res = await fetch('https://trello-backend-v4qh.onrender.com/api/auth/login', {
                 method: 'POST',
                 credentials: 'include',
                 headers: {

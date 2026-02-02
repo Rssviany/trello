@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 export const fetchBoards = createAsyncThunk(
     'boards/fetchBoards',
     async () => {
-        const res = await fetch(`http://localhost:6969/board/default`, {
+        const res = await fetch(`https://trello-backend-v4qh.onrender.com/board/default`, {
             method: 'GET',
             credentials: 'include'
         });
@@ -14,7 +14,7 @@ export const fetchBoards = createAsyncThunk(
 export const createBoards = createAsyncThunk(
     'boards/createBoards',
     async ({ title, background }) => {
-        const res = await fetch(`http://localhost:6969/board/creating_board`, {
+        const res = await fetch(`https://trello-backend-v4qh.onrender.com/board/creating_board`, {
             method: 'POST',
             credentials: 'include',
             headers: { 'Content-Type': 'application/json' },
@@ -29,7 +29,7 @@ export const createBoards = createAsyncThunk(
 export const fecthAllBoards = createAsyncThunk(
     'boards/fetchAllBoards',
     async () => {
-        const res = await fetch('http://localhost:6969/board/all_boards', {
+        const res = await fetch('https://trello-backend-v4qh.onrender.com/board/all_boards', {
             method: 'GET',
             credentials: 'include'
         });

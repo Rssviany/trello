@@ -4,7 +4,6 @@ import edit from '../assets/icons/edit.png'
 function InboxCard({ card, setEditOpen, setCards }) {
 
     const handleComplete = async (card) => {
-        // optimistic update
         setCards(prev =>
             prev.map(c =>
                 c._id === card._id
@@ -13,7 +12,7 @@ function InboxCard({ card, setEditOpen, setCards }) {
             )
         )
 
-        await fetch(`http://localhost:6969/inbox/items/${card._id}`, {
+        await fetch(`https://trello-backend-v4qh.onrender.com/inbox/items/${card._id}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             credentials: "include",

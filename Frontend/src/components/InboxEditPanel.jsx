@@ -3,13 +3,13 @@ import cross from '../assets/icons/cross.png'
 import descriptionIcon from '../assets/icons/description.png'
 
 export default function InboxEditPanel({ card, onClose }) {
-  /* ---------------- DESCRIPTION ---------------- */
+
   const [description, setDescription] = useState(card.description || '')
   const [tempDesc, setTempDesc] = useState(card.description || '')
   const [isDescEditing, setIsDescEditing] = useState(false)
   const descRef = useRef(null)
 
-  // auto height like trello
+
   useEffect(() => {
     if (descRef.current) {
       descRef.current.style.height = 'auto'
@@ -27,7 +27,7 @@ export default function InboxEditPanel({ card, onClose }) {
     setIsDescEditing(false)
   }
 
-  /* ---------------- COMMENTS ---------------- */
+
   const [comments, setComments] = useState(card.comments || [])
   const [text, setText] = useState('')
   const [editingId, setEditingId] = useState(null)
@@ -127,7 +127,6 @@ export default function InboxEditPanel({ card, onClose }) {
               </button>
             </div>
 
-            {/* COMMENTS LIST (SCROLL AFTER 2) */}
             <div
               className={`px-4 space-y-4 ${
                 comments.length > 2 ? 'overflow-y-auto max-h-60' : ''

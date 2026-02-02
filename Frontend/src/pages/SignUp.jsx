@@ -25,11 +25,11 @@ const Register = () => {
     setLoading(true);
 
     try {
-      await axios.post("http://localhost:6969/api/auth/register", formData, {
+      await axios.post("https://trello-backend-v4qh.onrender.com/api/auth/register", formData, {
         withCredentials: true,
       });
 
-      // redirect to login
+ 
       window.location.href = "/login";
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong");

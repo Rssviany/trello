@@ -21,12 +21,12 @@ const ForgotPassword = () => {
     setLoading(true);
     setError("");
     try {
-      const response = await fetch("http://localhost:6969/api/auth/forgot-password", {
+      const response = await fetch("https://trello-backend-v4qh.onrender.com/api/auth/forgot-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        credentials: "include", // include cookies in request
+        credentials: "include", 
         body: JSON.stringify({ email: form.email }),
       });
 
@@ -47,12 +47,12 @@ const ForgotPassword = () => {
     setLoading(true);
     setError("");
     try {
-      const response = await fetch("http://localhost:6969/api/auth/reset-password", {
+      const response = await fetch("https://trello-backend-v4qh.onrender.com/api/auth/reset-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        credentials: "include", // include cookies in request
+        credentials: "include", 
         body: JSON.stringify({
           email: form.email,
           otp: form.otp,

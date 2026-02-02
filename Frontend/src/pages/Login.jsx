@@ -29,7 +29,7 @@ const Login = () => {
     try {
       const result = await dispatch(fecthUser(formData)).unwrap();
 
-      // ✅ now result is real user data
+ 
       localStorage.setItem("user", JSON.stringify(result));
 
       navigate("/");
