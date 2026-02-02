@@ -25,7 +25,7 @@ const Register = () => {
     setLoading(true);
 
     try {
-      await axios.post("https://trello-backend-v4qh.onrender.com/api/auth/register", formData, {
+      await axios.post("https://trello-backend-izq1.onrender.com/api/auth/register", formData, {
         withCredentials: true,
       });
 

@@ -30,7 +30,7 @@ function Inbox() {
 
         try {
             const res = await fetch(
-                "https://trello-backend-v4qh.onrender.com/inbox/items_creating",
+                "https://trello-backend-izq1.onrender.com/inbox/items_creating",
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -56,7 +56,7 @@ function Inbox() {
     useEffect(() => {
         const loadCards = async () => {
             const res = await fetch(
-                "https://trello-backend-v4qh.onrender.com/inbox/items",
+                "https://trello-backend-izq1.onrender.com/inbox/items",
                 { credentials: "include" }
             )
             const data = await res.json()

@@ -21,7 +21,7 @@ const ForgotPassword = () => {
     setLoading(true);
     setError("");
     try {
-      const response = await fetch("https://trello-backend-v4qh.onrender.com/api/auth/forgot-password", {
+      const response = await fetch("https://trello-backend-izq1.onrender.com/api/auth/forgot-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -47,7 +47,7 @@ const ForgotPassword = () => {
     setLoading(true);
     setError("");
     try {
-      const response = await fetch("https://trello-backend-v4qh.onrender.com/api/auth/reset-password", {
+      const response = await fetch("https://trello-backend-izq1.onrender.com/api/auth/reset-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

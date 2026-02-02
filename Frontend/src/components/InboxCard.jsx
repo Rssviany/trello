@@ -12,7 +12,7 @@ function InboxCard({ card, setEditOpen, setCards }) {
             )
         )
 
-        await fetch(`https://trello-backend-v4qh.onrender.com/inbox/items/${card._id}`, {
+        await fetch(`https://trello-backend-izq1.onrender.com/inbox/items/${card._id}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             credentials: "include",
