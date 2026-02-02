@@ -19,8 +19,7 @@ app.use(cookieParser());
 
 app.use(cors({
   origin: [
-    "http://localhost:6969",
-    "https://trellofrontend-psi.vercel.app"
+    "http://localhost:5173",
   ],
   credentials: true
 }));
