@@ -67,7 +67,7 @@ function Inbox() {
     }, [])
 
     return (
-        <div className='w-70 shrink-0 h-170 border-2 border-gray-200 hidden md:flex rounded-2xl ml-2 mb-1 overflow-hidden'>
+        <div className='w-70 shrink-0 h-170 border-2 border-gray-200  rounded-2xl ml-2 mb-1 overflow-hidden'>
             <div className='relative group inline-block w-full'>
                 {/* Header */}
                 <div className='bg-[#eaeffb] w-70 h-15 rounded-tr-2xl rounded-tl-2xl flex items-center px-4'>
